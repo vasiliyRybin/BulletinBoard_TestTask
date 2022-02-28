@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32126.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulletinBoard", "BulletinBoard.csproj", "{72E6063E-F2D8-487C-A86B-D17DE219BF32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BulletinBoard", "BulletinBoard.csproj", "{72E6063E-F2D8-487C-A86B-D17DE219BF32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulletinBoard.Web", "..\BulletinBoard.Web\BulletinBoard.Web.csproj", "{3E04C657-E933-4A60-9DBB-F70ADC0F2A76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BulletinBoard.Web", "..\BulletinBoard.Web\BulletinBoard.Web.csproj", "{3E04C657-E933-4A60-9DBB-F70ADC0F2A76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulletinBoard.BusinessLayer", "..\BulletinBoard.BusinessLayer\BulletinBoard.BusinessLayer.csproj", "{DFBD215F-ED9F-4CE4-9F44-BC9419341883}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BulletinBoard.BusinessLayer", "..\BulletinBoard.BusinessLayer\BulletinBoard.BusinessLayer.csproj", "{DFBD215F-ED9F-4CE4-9F44-BC9419341883}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulletinBoard.DB", "..\BulletinBoard.DB\BulletinBoard.DB.csproj", "{F2FD0783-8AE1-4786-B7CB-18088A80E9D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BulletinBoard.DB", "..\BulletinBoard.DB\BulletinBoard.DB.csproj", "{F2FD0783-8AE1-4786-B7CB-18088A80E9D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulletinBoard.Interfaces", "..\BulletinBoard.Interfaces\BulletinBoard.Interfaces.csproj", "{4D89BDF7-E8EE-490B-8F88-7DBFB8B4C6F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BulletinBoard.Interfaces", "..\BulletinBoard.Interfaces\BulletinBoard.Interfaces.csproj", "{4D89BDF7-E8EE-490B-8F88-7DBFB8B4C6F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulletinBoard.Tests", "..\BulletinBoard.Tests\BulletinBoard.Tests.csproj", "{F4B024B9-C30E-476B-A11C-6D8C34F1B17B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{4D89BDF7-E8EE-490B-8F88-7DBFB8B4C6F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D89BDF7-E8EE-490B-8F88-7DBFB8B4C6F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D89BDF7-E8EE-490B-8F88-7DBFB8B4C6F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4B024B9-C30E-476B-A11C-6D8C34F1B17B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4B024B9-C30E-476B-A11C-6D8C34F1B17B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4B024B9-C30E-476B-A11C-6D8C34F1B17B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4B024B9-C30E-476B-A11C-6D8C34F1B17B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
