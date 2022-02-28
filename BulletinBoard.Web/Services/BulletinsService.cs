@@ -31,7 +31,7 @@ namespace BulletinBoard.Web.Services
                     .FirstOrDefault(x => x.Name.ToLower() == pageParams.Attribute.ToLower());
 
                 var propName = orderBy?.Name ?? "Name";
-                
+
 
                 if (test)
                 {
@@ -45,6 +45,9 @@ namespace BulletinBoard.Web.Services
                         bulletins.OrderByDescending(x => EF.Property<object>(x, propName)) :
                         bulletins.OrderBy(x => EF.Property<object>(x, propName));
                 }
+
+                bulletins = bulletins.Skip((pageParams.PageNumber - 1) * pageParams.PageSize)
+                    .Take(pageParams.PageSize);
 
                 List<Bulletin> preResult = test ? bulletins.ToList() : await bulletins.ToListAsync();
                 List<BulletinExternalModel> result = new();
@@ -68,7 +71,7 @@ namespace BulletinBoard.Web.Services
             }
         }
 
-        public async Task<Bulletin> GetFirstBulletinOrDefault(QueryParams queryParams, string name)
+        public async Task<Bulletin> GetFirstBulletinOrDefault(string name, QueryParams queryParams)
         {
             var bulletin = await Task.Run(() => BulletinRepo.Get().OrderByDescending(x => x.CreationDate).FirstOrDefault(x => x.Name == name));
 
@@ -81,7 +84,7 @@ namespace BulletinBoard.Web.Services
                         Name = bulletin.Name,
                         PhotoLinks = queryParams.ShowPhotos ? bulletin.PhotoLinks : bulletin.PhotoLinks.Split(", ").FirstOrDefault(),
                         Price = bulletin.Price,
-                        Description = queryParams.ShowDescription ? bulletin.Description : string.Empty                        
+                        Description = queryParams.ShowDescription ? bulletin.Description : string.Empty
                     };
 
                     return result;
@@ -114,7 +117,7 @@ namespace BulletinBoard.Web.Services
             {
                 return null;
                 throw;
-            }            
+            }
 
         }
 
@@ -124,7 +127,7 @@ namespace BulletinBoard.Web.Services
             if (bulletin.Name.Length > 1000 || bulletin.Name.Length < 1) return false;
             if (bulletin.Description.Length > 1000 || bulletin.Description.Length < 10) return false;
             if (bulletin.Price < 1 || bulletin.Price > 999999999) return false;
-            if (photoCheckArr.Length > 3) return false;
+            if (photoCheckArr.Length > 3 || photoCheckArr.Length == 0) return false;
 
             foreach (var item in photoCheckArr)
             {

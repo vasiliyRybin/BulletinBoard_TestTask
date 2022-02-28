@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace BulletinBoard.DB.Models.InitializeDB
@@ -27,7 +26,7 @@ namespace BulletinBoard.DB.Models.InitializeDB
                         Name = "Xiaomi MI 12 Pro",
                         Description = "Продам Xiaomi MI 12 Pro, состояние 8/10, пользовались 1 год" +
                         ", продаём по причине покупки IPhone 12, все вопросы по телефону +375293332211",
-                        PhotoLinks = "xi1.jpg, xi2.jpg" ,
+                        PhotoLinks = "xi1.jpg, xi2.jpg",
                         Price = 899.99,
                         CreationDate = DateTime.Now
                     }

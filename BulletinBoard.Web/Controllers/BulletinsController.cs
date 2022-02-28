@@ -1,5 +1,4 @@
 ﻿using BulletinBoard.DB.Models;
-using BulletinBoard.Web.CustomModels;
 using BulletinBoard.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -28,7 +27,7 @@ namespace BulletinBoard.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAsync(string Name, [FromQuery] QueryParams queryParams)
         {
-            var result = await Service.GetFirstBulletinOrDefault(queryParams, Name);
+            var result = await Service.GetFirstBulletinOrDefault(Name, queryParams);
             return Ok(result);
         }
 
@@ -38,7 +37,7 @@ namespace BulletinBoard.Web.Controllers
         {
             var result = await Service.CreateBulletin(bulletin);
             if (result != null) return Ok(result.ID);
-            return Conflict();
+            return Conflict(result.ID);
         }
     }
 }

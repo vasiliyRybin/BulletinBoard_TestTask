@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace BulletinBoard.Web.CustomModels
+﻿namespace BulletinBoard.Web.CustomModels
 {
     public class BulletinExternalModel
     {
